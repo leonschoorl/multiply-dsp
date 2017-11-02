@@ -1,0 +1,19 @@
+[ { "BlackBox" :
+    { "name" : "MultiplySynchronous.multiplySigned'"
+    , "type" :
+"multiplySigned' :: SClock clk             -- ARG[0]
+                 -> Signal' clk (Signed n) -- ARG[1]
+                 -> Signal' clk (Signed m) -- ARG[2]
+                 -> Signal' clk (Signed (n+m))"
+    , "templateD" :
+"-- multiplySigned begin
+~GENSYM[~COMPNAME_multiplySigned][0] : process(~CLK[0])
+begin
+  if rising_edge(~CLK[0]) then
+    ~RESULT <= ~ARG[1] * ~ARG[2];
+  end if;
+end process;
+-- multiplySigned end"
+    }
+  }
+]
